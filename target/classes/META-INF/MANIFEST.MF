@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: jsf-primefaces-spring-security
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: gsj
+Implementation-Vendor-Id: com.codenotfound
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://www.codenotfound.com/jsf-primefaces-spring
+ -security-example.html
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: JoinFaces
+
