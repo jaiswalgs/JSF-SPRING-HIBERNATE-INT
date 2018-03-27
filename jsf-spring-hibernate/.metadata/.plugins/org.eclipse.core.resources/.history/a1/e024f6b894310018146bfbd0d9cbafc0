@@ -1,0 +1,43 @@
+package com.codenotfound.primefaces.repository;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.codenotfound.primefaces.model.Employee;
+
+
+public class EmployeeService {
+
+	@Autowired
+    private EmployeeRepository repository;
+	
+	
+
+	    @Override
+	    public Employee findUserById(long id) {
+	        LOGGER.debug("Search user by id: " + id);
+	        return repository.findOne(id);
+	    }
+
+	    @Override
+	    public List<Employee> findAllUsers() {
+	        LOGGER.debug("Retrieve the list of all users!");
+	        return repository.findAll();
+	    }
+
+	   
+
+	    @Override
+	    public void deleteEmployee(Long id) {
+	        LOGGER.debug("User by id: " + id + " Deleted!");
+	        repository.delete(id);
+	    }
+
+	    @Override
+	    public void deleteAllUsers() {
+	        LOGGER.debug("The list all users deleted!");
+	        repository.deleteAll();
+	    }
+	
+}

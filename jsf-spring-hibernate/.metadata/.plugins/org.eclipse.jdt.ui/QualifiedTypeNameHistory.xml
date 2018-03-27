@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.AddEmployeeRequest"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.EmployeeStatus"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.AddEmployeeResponse"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.EmployeeInfo"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.GetEmployeeByNameResponse"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.UpdateEmployeeResponse"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.DeleteEmployeeResponse"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.GetEmployeeByNameRequest"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.UpdateEmployeeRequest"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.DeleteEmployeeRequest"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.GeAllEmployeesByNameResponse"/>
+<fullyQualifiedTypeName name="com.concretepage.gs_ws.GetAllEmployeesByNameRequest"/>
+<fullyQualifiedTypeName name="scala.annotation.meta.setter"/>
+<fullyQualifiedTypeName name="com.concretepage.repository.ArticleRepository"/>
+<fullyQualifiedTypeName name="com.codenotfound.primefaces.repository.EmployeeRepository"/>
+<fullyQualifiedTypeName name="antlr.collections.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.codenotfound.primefaces.model.Employee"/>
+<fullyQualifiedTypeName name="com.codenotfound.primefaces.services.EmployeeService"/>
+</qualifiedTypeNameHistroy>

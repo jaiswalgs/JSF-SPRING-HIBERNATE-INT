@@ -1,0 +1,13 @@
+package com.dpbygauri.service;
+
+import java.util.List;
+
+import com.concretepage.entity.Article;
+
+public interface IEmployeeService {
+     List<Employee> getAllArticles();
+     Article getArticleById(long articleId);
+     boolean addArticle(Employee employee);
+     void updateArticle(Employee employee);
+     void deleteArticle(Employee employee);
+}

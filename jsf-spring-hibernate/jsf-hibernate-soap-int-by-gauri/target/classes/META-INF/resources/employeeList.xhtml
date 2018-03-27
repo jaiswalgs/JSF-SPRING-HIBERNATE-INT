@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+  <title>PrimeFaces DataTable Example</title>
+</h:head>
+
+<h:body>
+
+  <h:form id="cars1">
+		<p:growl id="growl" showDetail="false" sticky="true" />
+		<p:fieldset id="addForm" collapsed="true" legend="Add Employee to Database"
+			toggleable="true" toggleSpeed="500">
+			<p:ajax event="toggle" />
+			<p:panelGrid columns="2">
+				<label>Name</label>
+				 <p:inputText id="name" value="#{employeeListView.employee.empName}" /> 
+				
+				<label>Address</label>
+				 <p:inputText id="address" value="#{employeeListView.employee.address}" /> 
+				
+				<label>Department</label>
+	            <p:selectOneMenu id="department" value="#{employeeListView.depObj.departmentId}" 
+	            style="width:150px" >
+	                <f:selectItem itemLabel="Select Department" itemValue="" noSelectionOption="true" />
+	                <f:selectItems value="#{employeeListView.departmentList}"  
+	                 var="depppt" itemValue="#{depppt.departmentId}" itemLabel="#{depppt.departmentName}"/>
+	            </p:selectOneMenu>
+				<h:commandButton id="addEmployeeButton" 
+					action="#{employeeListView.addEmployee}"
+					update="cars1 :carsTable:cars2" value="Add Employee">
+				</h:commandButton>
+			</p:panelGrid>
+		</p:fieldset>
+		<br></br>
+	</h:form>
+	<h:form id="carsTable">
+		<p:dataTable id="cars2" var="employee" value="#{employeeListView.employeeList}"
+			scrollable="true" scrollHeight="100%" editable="true"
+			style="margin-bottom:20px">
+			<p:ajax event="rowEdit" listener="${employeeListView.onRowEdit}"
+				update="cars2" />
+			<f:facet name="header">
+          Employees
+       </f:facet>
+			<p:column headerText="Name">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="${employee.empName}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="${employee.empName}" style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+			<p:column headerText="Address" >
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="${employee.address}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="${employee.address}" style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+			
+			<p:column headerText="Edit" style="width:50px">
+				<p:rowEditor />
+			</p:column>
+			<p:column headerText="Delete" style="width:50px">
+				<p:commandButton style="center" action="#{employeeListView.deleteEmployee(employee)}"
+					update="cars2" icon="ui-icon-close" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,21 @@
+package com.codenotfound.primefaces.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.codenotfound.primefaces.model.Employee;
+import com.codenotfound.primefaces.repository.EmployeeRepository;
+
+public class EmployeeService {
+
+	@Autowired
+    private EmployeeRepository employeeRepository;
+	
+	
+	  public List<Employee> findAllUsers() {	        
+	        return employeeRepository.findAll();
+	    }
+	
+	
+}

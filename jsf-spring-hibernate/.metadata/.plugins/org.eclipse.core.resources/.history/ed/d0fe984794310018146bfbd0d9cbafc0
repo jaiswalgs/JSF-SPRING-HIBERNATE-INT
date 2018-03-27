@@ -1,0 +1,53 @@
+package com.codenotfound.primefaces.repository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class EmployeeService {
+
+	@Autowired
+    private EmployeeRepository repository;
+	
+	 @Override
+	    public User saveUser(User user) {
+	        LOGGER.debug("Save {}", user);
+	        User existing = repository.findOne(user.getId());
+	        if (existing != null) {
+	            throw new UserAlreadyExistsException(
+	                    String.format("There already exists a user with id = %s", user.getId()));
+	        }
+	        return repository.save(user);
+	    }
+
+	    @Override
+	    public User findUserById(long id) {
+	        LOGGER.debug("Search user by id: " + id);
+	        return repository.findOne(id);
+	    }
+
+	    @Override
+	    public List<User> findAllUsers() {
+	        LOGGER.debug("Retrieve the list of all users!");
+	        return repository.findAll();
+	    }
+
+	    @Override
+	    public User updateUser(User user) {
+	        LOGGER.debug("User with id: " + user.getId() + " updated! ");
+	        if (!entityManager.contains(user))
+	            user = entityManager.merge(user);
+	        return user;
+	    }
+
+	    @Override
+	    public void deleteUser(Long id) {
+	        LOGGER.debug("User by id: " + id + " Deleted!");
+	        repository.delete(id);
+	    }
+
+	    @Override
+	    public void deleteAllUsers() {
+	        LOGGER.debug("The list all users deleted!");
+	        repository.deleteAll();
+	    }
+	
+}
